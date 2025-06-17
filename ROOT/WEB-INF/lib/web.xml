@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns="https://jakarta.ee/xml/ns/jakartaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_6_0.xsd"
+         version="6.0">
+    <!-- 기존 서블릿 등록 -->
+    <servlet>
+        <servlet-name>SignupServlet</servlet-name>
+        <servlet-class>com.signupServlet</servlet-class>
+    </servlet>
+
+    <!-- 기존 서블릿 매핑 -->
+    <servlet-mapping>
+        <servlet-name>SignupServlet</servlet-name>
+        <url-pattern>/signupServlet</url-pattern>
+    </servlet-mapping>
+
+    <!-- API 연동 서블릿 등록 -->
+    <servlet>
+        <servlet-name>SearchTourInfoServlet</servlet-name>
+        <servlet-class>model.SearchTourInfoServlet</servlet-class> <!-- 서블릿 클래스 경로 -->
+    </servlet>
+
+    <!-- API 연동 서블릿 매핑 -->
+    <servlet-mapping>
+        <servlet-name>SearchTourInfoServlet</servlet-name>
+        <url-pattern>/searchTourInfo</url-pattern> <!-- URL 패턴 -->
+    </servlet-mapping>
+</web-app>

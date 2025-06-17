@@ -1,0 +1,128 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PLACE 4 YOU - 회원 탈퇴 성공</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .background {
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+    		width: 100%;
+    		height: 100%;
+    		background-image: url('/team8_main/img/background1.jpg');
+    		background-size: cover;
+    		background-position: center;
+    		background-repeat: no-repeat;
+    		z-index: -1; /* 다른 요소 뒤로 배치 */
+		}
+        .top-bar {
+        	z-index: 1;
+    		background-color: rgba(255, 255, 255, 0.9);
+    		max-width: 100%; /* 최대 너비 제한 */
+    		width: 100%; /* 패딩을 제외한 너비 */
+    		height: 70px; /* 자동 높이 */
+    		margin: auto; /* 화면 중앙 정렬 */
+    		overflow: hidden; /* 스크롤 숨김 */
+    		margin-bottom: 100px;
+    		position: fixed;
+    		top: 0;
+    		left: 0;
+        }
+        .title {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2em;
+            color: #333;
+        }
+        .title a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .nav-links {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 1em;
+            color: #333;
+        }
+        .nav-links a {
+            color: #333;
+            text-decoration: none;
+            margin-left: 10px;
+        }
+        .subtitle {
+        	text-align: center;
+            font-size: 2em;
+            color: #333;
+            margin-bottom: 20px; /* 위아래 간격 좁히기 */
+        }
+        .withdraw-container {
+        	align-items: center;
+            text-align: center;
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 50px;
+            border-radius: 10px;
+            width: 30%;
+            box-sizing: border-box;
+            position: absolute;
+            top: 10%;
+            left: 50%;
+            transform: translate(-50%, 0);
+            min-width: 500px;
+        }
+        .logout-button {
+            padding: 10px 20px;
+            background-color: #d9534f;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            font-size: 1.1em;
+            cursor: pointer;
+            width: 300px;
+        }
+        .logout-button:hover {
+            background-color: #c9302c;
+        }
+        .message {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+	<div class="background"></div>
+    <div class="top-bar">
+        <div class="title"><a href="index.jsp">PLACE 4 YOU</a></div>
+        <div class="nav-links">
+			<a href="howtouse.jsp">How to use</a>
+            <a href="signup.jsp">Signup</a>
+            <a href="login.jsp">Login</a>
+        </div><br><br><br><br><br>
+    </div>
+   	<div class="withdraw-container">
+        <div class="subtitle">회원탈퇴</div>
+        <%
+            session.invalidate();
+        %>
+
+        <div class="message">회원탈퇴가 완료되었습니다.</div>
+
+        <script>
+            setTimeout(function() {
+                window.location.href = "index.jsp";
+            }, 2000); // 2초 후에 로그인 페이지로 리다이렉트
+        </script>
+    </div>
+</body>
+</html>
